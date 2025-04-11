@@ -1,0 +1,115 @@
+<section class="contact-section">
+  <div class="container">
+    <h2>Contacto</h2>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>¡Hablemos!</h3>
+        <p>
+          Estoy disponible para proyectos freelance y oportunidades laborales.
+          No dudes en contactarme si tienes alguna pregunta o propuesta.
+        </p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>jose.videsbaron&#64;gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+57 3008861227</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Sincelejo, Colombia</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/JoseVides17" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/josevides17" class="social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/videsbaron" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              [class.is-invalid]="name?.invalid && name?.touched"
+              placeholder="Tu nombre">
+            <div class="error-message" *ngIf="name?.invalid && name?.touched">
+              <span *ngIf="name?.errors?.['required']">El nombre es requerido</span>
+              <span *ngIf="name?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email" 
+              [class.is-invalid]="email?.invalid && email?.touched"
+              placeholder="tu.email@ejemplo.com">
+            <div class="error-message" *ngIf="email?.invalid && email?.touched">
+              <span *ngIf="email?.errors?.['required']">El email es requerido</span>
+              <span *ngIf="email?.errors?.['email']">Por favor, ingresa un email válido</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input 
+              type="text" 
+              id="subject" 
+              formControlName="subject" 
+              [class.is-invalid]="subject?.invalid && subject?.touched"
+              placeholder="Asunto del mensaje">
+            <div class="error-message" *ngIf="subject?.invalid && subject?.touched">
+              <span *ngIf="subject?.errors?.['required']">El asunto es requerido</span>
+              <span *ngIf="subject?.errors?.['minlength']">El asunto debe tener al menos 5 caracteres</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              [class.is-invalid]="message?.invalid && message?.touched"
+              placeholder="Tu mensaje"></textarea>
+            <div class="error-message" *ngIf="message?.invalid && message?.touched">
+              <span *ngIf="message?.errors?.['required']">El mensaje es requerido</span>
+              <span *ngIf="message?.errors?.['minlength']">El mensaje debe tener al menos 10 caracteres</span>
+            </div>
+          </div>
+
+          <div class="form-messages">
+            <div class="success-message" *ngIf="formSubmitted">
+              {{ submitMessage }}
+            </div>
+            <div class="error-message" *ngIf="formError">
+              {{ submitMessage }}
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid || isSubmitting">
+            <span *ngIf="!isSubmitting">Enviar Mensaje</span>
+            <span *ngIf="isSubmitting">Enviando...</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

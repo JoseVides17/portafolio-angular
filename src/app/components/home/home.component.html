@@ -1,0 +1,71 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>¡Hola! Soy <span class="highlight">Jose Vides</span></h1>
+    <h2>Desarrollador de software</h2>
+    <p class="description">
+      Apasionado por crear experiencias web innovadoras y soluciones tecnológicas que marquen la diferencia.
+    </p>
+    <div class="cta-buttons">
+      <a href="/projects" class="btn primary">Ver Proyectos</a>
+      <a href="/contact" class="btn secondary">Contactar</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="profile-placeholder">
+        <img src="assets/images/perfil.jpeg" alt="Foto de perfil">
+    </div>
+  </div>
+</section>
+
+<section class="tech-stack">
+  <div class="container">
+    <h2>Mis Tecnologías Principales</h2>
+    <div class="skills-container">
+      <div class="skill-item" *ngFor="let skill of mainSkills">
+        <div class="skill-info">
+          <div class="skill-icon">
+            <i class="fab" [ngClass]="{
+              'fa-angular': skill.name === 'Angular',
+              'fa-react': skill.name === 'React',
+              'fa-php': skill.name === 'PHP',
+              'fa-java': skill.name === 'Java',
+              'fa-laravel': skill.name === 'Laravel'
+            }" *ngIf="skill.name !== 'Spring'"></i>
+            <svg *ngIf="skill.name === 'Spring'" class="spring-icon" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+          </div>
+          <div class="skill-name">{{skill.name}}</div>
+          <div class="skill-percentage">{{skill.percentage}}%</div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" [style.width.%]="skill.percentage"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-preview">
+  <div class="container">
+    <h3>Habilidades</h3>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <i class="fas fa-code"></i>
+        <span>Desarrollo Web</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-mobile-alt"></i>
+        <span>Diseño Responsivo</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-database"></i>
+        <span>Bases de Datos</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-server"></i>
+        <span>Backend</span>
+      </div>
+    </div>
+  </div>
+</section>
