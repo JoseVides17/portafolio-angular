@@ -9,10 +9,19 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule]
 })
 export class NavbarComponent {
-  isScrolled = false;
+  menuOpen: boolean = false;
+  isScrolled: boolean = false;
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
+  onWindowScroll(): void {
     this.isScrolled = window.scrollY > 50;
   }
 }

@@ -19,17 +19,15 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   }
 
-  .navbar-brand {
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
+  .navbar-brand .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
-      &:hover {
-        color: #007bff;
-      }
+    &:hover {
+      color: #007bff;
     }
   }
 
@@ -63,5 +61,58 @@
         }
       }
     }
+  }
+
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+
+    span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
+  }
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  gap: 1rem;
+
+  a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+
+  &.open {
+    display: flex;
   }
 }

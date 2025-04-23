@@ -2,10 +2,24 @@
   <div class="navbar-brand">
     <a routerLink="/" class="logo">VIDESTECH</a>
   </div>
+
   <div class="navbar-menu">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
     <a routerLink="/about" routerLinkActive="active">Sobre Mí</a>
     <a routerLink="/projects" routerLinkActive="active">Proyectos</a>
     <a routerLink="/contact" routerLinkActive="active">Contacto</a>
   </div>
+
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
+
+<div class="mobile-menu" [class.open]="menuOpen">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
+  <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Sobre Mí</a>
+  <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Proyectos</a>
+  <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
+</div>
