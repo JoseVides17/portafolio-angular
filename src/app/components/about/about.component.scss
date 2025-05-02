@@ -267,6 +267,10 @@
   }
 
   .education {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    
     h3 {
       color: #333;
       font-size: 1.8rem;

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-type CertificateId = 'sena' | 'unab-tecnico' | 'unab-diplomado-moviles' | 'unab-diplomado-fundamentos' | 'unab-diplomado-basica' | 'unab-diplomado-desarrollo-software';
+type CertificateId = 'sena' | 'unab-tecnico' | 'unab-diplomado-moviles' | 'unab-diplomado-fundamentos' | 'unab-diplomado-basica' 
+| 'unab-diplomado-desarrollo-software' | 'udemy' | 'udemy-2';
 
 @Component({
   selector: 'app-about',
@@ -17,7 +18,9 @@ export class AboutComponent {
     'unab-diplomado-moviles': 'assets/certificates/unab-diplomado-moviles.pdf',
     'unab-diplomado-fundamentos': 'assets/certificates/unab-diplomado-fundamentos.pdf',
     'unab-diplomado-basica': 'assets/certificates/unab-diplomado-basica.pdf',
-    'unab-diplomado-desarrollo-software': 'assets/certificates/unab-diplomado-desarrollo-software.pdf'
+    'unab-diplomado-desarrollo-software': 'assets/certificates/unab-diplomado-desarrollo-software.pdf',
+    'udemy': 'assets/certificates/udemy-react-spring.pdf',
+    'udemy-2': 'assets/certificates/api-rest-spring-udemy.pdf'
   };
 
   showCertificate(certificateId: CertificateId) {
