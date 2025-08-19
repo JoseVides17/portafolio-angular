@@ -14,9 +14,9 @@ export interface ContactForm {
   providedIn: 'root'
 })
 export class ContactService {
-  private readonly PUBLIC_KEY = 'ZLnfqPHKqwjx-cfY0'; // Reemplaza con tu Public Key de EmailJS
-  private readonly SERVICE_ID = 'service_phqygrj'; // Reemplaza con tu Service ID de EmailJS
-  private readonly TEMPLATE_ID = 'template_8ok2toi'; // Reemplaza con tu Template ID de EmailJS
+  private readonly PUBLIC_KEY = 'hk9dAv7tRlCJRG3w8'; // Reemplaza con tu Public Key de EmailJS
+  private readonly SERVICE_ID = 'service_hsp8hsb'; // Reemplaza con tu Service ID de EmailJS
+  private readonly TEMPLATE_ID = 'template_crl70rs'; // Reemplaza con tu Template ID de EmailJS
 
   constructor() {
     emailjs.init(this.PUBLIC_KEY);
@@ -42,4 +42,4 @@ export class ContactService {
       }))
     );
   }
-} 
+}
